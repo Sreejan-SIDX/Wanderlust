@@ -1,32 +1,32 @@
 <style>
-    .search-btn{
+    .search-btn {
         background-color: #fe424d;
         color: #fff;
         border-radius: 30px;
         padding: 0 1rem 0 1rem;
     }
 
-    .search-btn:hover{
+    .search-btn:hover {
         background-color: #fe424d;
         color: #fff;
     }
 
-    .search-btn i{
+    .search-btn i {
         display: inline;
         margin-right: 0.5rem;
     }
 
-    .search-inp{
+    .search-inp {
         border-radius: 30px;
         padding: 0.5rem 3rem 0.5rem 3rem;
         font-size: 0.9em;
     }
 
-    .add{
+    .add {
         opacity: 0.7;
     }
 
-    .add:hover{
+    .add:hover {
         opacity: 1;
     }
 </style>
@@ -46,20 +46,27 @@
             <div class="navbar-nav ms-auto">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 search-inp" type="search" placeholder="Search destinatons" />
-                    <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                    <button class="btn search-btn" type="submit"><i
+                            class="fa-solid fa-magnifying-glass"></i>Search</button>
                 </form>
             </div>
 
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/listings/new"><i class="fa-solid fa-circle-plus add"></i>&nbsp;Add</a>
-                <% if(!currUser) { %>
-                    <a class="nav-link " href="/signup"><b>Sign Up</b></a>
+                <a class="nav-link" href="/listings/new">
+                    <i class="fa-solid fa-circle-plus add"></i>&nbsp;Add
+                </a>
+
+                <% if (typeof currUser==="undefined" || !currUser) { %>
+                    <!-- Show when NOT logged in -->
+                    <a class="nav-link" href="/signup"><b>Sign Up</b></a>
                     <a class="nav-link" href="/login"><b>Log In</b></a>
-                    <% } %>
-                        <% if(currUser) { %>
-                            <a class="nav-link" href="/logout"><b>Log Out</b></a>
-                            <% } %>
+                    <% } else { %>
+                        <!-- Show when logged in -->
+                        <span class="nav-link">Hello, <%= currUser.username %></span>
+                        <a class="nav-link" href="/logout"><b>Log Out</b></a>
+                        <% } %>
             </div>
+
         </div>
     </div>
 </nav>
