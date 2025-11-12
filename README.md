@@ -2,6 +2,8 @@
 
 Wanderlust is a travel planning and discovery application designed to help users explore new destinations, manage itineraries, and share travel experiences. The project aims to simplify trip organization with intuitive features and a beautiful interface.
 
+🔗 **Live Demo:** [https://wanderlust-zkr0.onrender.com/listings](https://wanderlust-zkr0.onrender.com/listings)
+
 ## Features
 
 - **Destination Discovery:** Search and browse a curated list of travel destinations.
